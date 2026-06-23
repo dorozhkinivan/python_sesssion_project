@@ -166,8 +166,8 @@ uv run pytest tests/ -v
 **POST /auth/register:**
 ```json
 {
-  "email": "user@example.com",
-  "password": "test"
+  "email": "dorozhkin@email.com",
+  "password": "test123"
 }
 ```
 
@@ -176,8 +176,8 @@ uv run pytest tests/ -v
 ### Шаг 2. Вход и получение JWT
 
 **POST /auth/login** (form-data):
-- `username`: `user@example.com`
-- `password`: `test`
+- `username`: `dorozhkin@email.com`
+- `password`: `test123`
 
 Ответ содержит `access_token` — скопируйте его.
 
@@ -220,6 +220,8 @@ uv run pytest tests/ -v
 
 ### Auth Service (20 тестов)
 
+![Тесты в Auth Service](images/tests_auth.png)
+
 | Категория | Тесты                                                                    |
 |-----------|--------------------------------------------------------------------------|
 | Модульные: хеширование паролей | hash != plain, verify correct, verify wrong, different salts             |
@@ -230,6 +232,8 @@ uv run pytest tests/ -v
 | Интеграционные: полный флоу | register -> login -> me                                                  |
 
 ### Bot Service (20 тестов)
+
+![Тесты в Bot Service](images/tests_bot.png)
 
 | Категория | Тесты |
 |-----------|-------|
